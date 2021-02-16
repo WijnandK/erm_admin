@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import Stage from "./components/map/stage"
 import './App.css';
-
+import { createMapField, createMiddle, createSouth } from "./components/map/mapfield";
+import { Fragment, React } from "react";
+import mapimg from "./images/map.jpg"
+import Layout from "./components/layout/Layout";
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Fragment>
+      <Layout>
+            <img className="mapbcknl" src={mapimg}/>
+   
+    <div className="squaregrid">
+  <Stage stage={createMapField()} bckColor="red"/>
+    <Stage stage={createMiddle()} bckColor="blue"/>
+  <Stage stage={createSouth()} bckColor="orange"/>
+
     </div>
+          </Layout>
+
+     </Fragment>
   );
 }
 
