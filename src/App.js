@@ -1,10 +1,14 @@
+import React, { Component, Fragment } from 'react';
 import Stage from "./components/map/stage"
 import './App.css';
-import { createMapField, createMiddle, createSouth } from "./components/map/mapfield";
-import { Fragment, React } from "react";
+import { createMapField,   createSouth } from "./components/map/mapfield";
+ 
 import mapimg from "./images/map.jpg"
 import Layout from "./components/layout/Layout";
-function App() {
+ 
+class App extends Component {
+  render() {
+
   
   return (
     <Fragment>
@@ -13,7 +17,7 @@ function App() {
    
     <div className="squaregrid">
   <Stage stage={createMapField()} bckColor="red"/>
-    <Stage stage={createMiddle()} bckColor="blue"/>
+   
   <Stage stage={createSouth()} bckColor="orange"/>
 
     </div>
@@ -21,6 +25,9 @@ function App() {
 
      </Fragment>
   );
+}
+
+ 
 }
 
 export default App;
